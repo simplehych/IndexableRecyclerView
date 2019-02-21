@@ -1,0 +1,9 @@
+<resources>
+	<string name="app_name">Organization</string>
+	
+	
+	<string-array name="organization_header">
+		<item>组织机构</item>
+		<item>微信邀请党员加入</item>
+	</string-array>
+</resources>

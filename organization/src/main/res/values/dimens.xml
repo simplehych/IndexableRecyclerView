@@ -1,0 +1,12 @@
+<resources>
+	<dimen name="margin_l_r">30dp</dimen>
+	<dimen name="height_item">48dp</dimen>
+	<dimen name="height_item_user">56dp</dimen>
+	<dimen name="height_des">50dp</dimen>
+	<dimen name="icon_w_h">24dp</dimen>
+	<dimen name="user_icon_w_h">30dp</dimen>
+	<dimen name="divide_line">1dp</dimen>
+	<dimen name="spacing">10dp</dimen>
+	
+	
+</resources>

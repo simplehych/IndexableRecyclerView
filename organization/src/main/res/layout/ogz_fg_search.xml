@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	
+	<me.yokeyword.indexablerv.IndexableLayout
+		android:id="@+id/ogz_fg_search_content"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent" />
+	
+	<RelativeLayout
+		android:id="@+id/ogz_fg_search_blank_layout"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:paddingTop="80dp">
+		
+		<ImageView
+			android:id="@+id/ogz_fg_search_blank_iv"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerHorizontal="true"
+			android:src="@drawable/ogz_search_blank" />
+		
+		<TextView
+			android:id="@+id/ogz_fg_search_blank_tv"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingTop="10dp"
+			android:layout_below="@+id/ogz_fg_search_blank_iv"
+			android:layout_centerHorizontal="true"
+			android:text="未搜索到组织和党员"
+			android:textColor="#808080"
+			android:textSize="14sp" />
+	</RelativeLayout>
+
+</RelativeLayout>

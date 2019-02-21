@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/ogz_search_layout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	
+	<RelativeLayout
+		android:id="@+id/ogz_search_top"
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:background="@color/bg_page"
+		android:padding="@dimen/spacing">
+		
+		<RelativeLayout
+			android:id="@+id/ogz_search_frame"
+			android:layout_width="match_parent"
+			android:layout_height="30dp"
+			android:layout_toLeftOf="@+id/ogz_search_frame_cancel"
+			android:background="@drawable/ogz_bg_search_frame"
+			android:paddingLeft="@dimen/spacing"
+			android:paddingRight="@dimen/spacing">
+			
+			<ImageView
+				android:id="@+id/ogz_search_frame_iv"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:src="@drawable/ogz_ic_search" />
+			
+			<ImageView
+				android:id="@+id/ogz_search_anim_holder_icon"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:src="@drawable/ogz_ic_search"
+				android:transitionName="transition_reveal"
+				tools:targetApi="lollipop" />
+			
+			<EditText
+				android:id="@+id/ogz_search_frame_et"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_toRightOf="@+id/ogz_search_frame_iv"
+				android:background="@null"
+				android:focusable="false"
+				android:focusableInTouchMode="false"
+				android:hint="搜索党员、组织"
+				android:textColor="#BBBBBB"
+				android:textSize="14sp" />
+		
+		</RelativeLayout>
+		
+		<TextView
+			android:id="@+id/ogz_search_frame_cancel"
+			android:layout_width="wrap_content"
+			android:layout_height="30dp"
+			android:layout_alignParentRight="true"
+			android:gravity="center"
+			android:paddingLeft="@dimen/spacing"
+			android:text="取消"
+			android:textColor="@color/str" />
+	</RelativeLayout>
+	
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_below="@+id/ogz_search_top">
+		
+		<fragment
+			android:id="@+id/ogz_search_content"
+			class="com.peopletech.organization.OgzSearchFragment"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent" />
+	</FrameLayout>
+	
+	
+	<RelativeLayout
+		android:id="@+id/ogz_search_anim_holder_layout"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent" />
+
+</RelativeLayout>

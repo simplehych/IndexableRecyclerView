@@ -2,13 +2,15 @@ package com.peopletech.organization.entity;
 
 import com.google.gson.annotations.SerializedName;
 
+import me.yokeyword.indexablerv.IndexableEntity;
+
 /**
  * 组织成员
  *
  * @author hych
  * @date 2019/2/20 14:15
  */
-public class MemberEntity {
+public class MemberEntity implements IndexableEntity {
 
     /**
      * 组织成员 id
@@ -21,6 +23,11 @@ public class MemberEntity {
      */
     @SerializedName("user_name")
     private String userName;
+
+    public MemberEntity(int id, String userName) {
+        this.id = id;
+        this.userName = userName;
+    }
 
     public int getId() {
         return id;
@@ -36,5 +43,20 @@ public class MemberEntity {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    @Override
+    public String getFieldIndexBy() {
+        return userName;
+    }
+
+    @Override
+    public void setFieldIndexBy(String indexField) {
+        this.userName = indexField;
+    }
+
+    @Override
+    public void setFieldPinyinIndexBy(String pinyin) {
+
     }
 }

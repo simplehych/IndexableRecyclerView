@@ -4,25 +4,25 @@
 	android:layout_height="wrap_content">
 	
 	<View
-		android:id="@+id/spacing"
+		android:id="@+id/ogz_item_description_top_spacing"
 		android:layout_width="match_parent"
 		android:layout_height="@dimen/spacing"
 		android:background="@color/divide_line" />
 	
 	<ImageView
-		android:id="@+id/img"
+		android:id="@+id/ogz_item_description_flag"
 		android:layout_width="12dp"
 		android:layout_height="14dp"
-		android:layout_below="@+id/spacing"
+		android:layout_below="@+id/ogz_item_description_top_spacing"
 		android:layout_marginLeft="@dimen/spacing"
 		android:src="@drawable/ogz_ic_flag" />
 	
 	<TextView
-		android:id="@+id/tv_title"
+		android:id="@+id/ogz_item_description_title"
 		style="@style/str"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_below="@+id/img"
+		android:layout_below="@+id/ogz_item_description_flag"
 		android:layout_marginLeft="@dimen/margin_l_r"
 		android:layout_marginBottom="6dp"
 		android:textSize="17sp" />

@@ -140,6 +140,7 @@ public class PickCityActivity extends AppCompatActivity {
 
     // 更新数据点击事件
     public void update(View view) {
+        mHotCityAdapter.removeDatalAll();
         List<CityEntity> list = new ArrayList<>();
         list.add(new CityEntity("杭州市"));
         list.add(new CityEntity("北京市"));
@@ -162,10 +163,10 @@ public class PickCityActivity extends AppCompatActivity {
 
     private List<CityEntity> iniyHotCityDatas() {
         List<CityEntity> list = new ArrayList<>();
-        list.add(new CityEntity("杭州市"));
-        list.add(new CityEntity("北京市"));
-        list.add(new CityEntity("上海市"));
-        list.add(new CityEntity("广州市"));
+        list.add(new CityEntity("杭州"));
+        list.add(new CityEntity("北京"));
+        list.add(new CityEntity("上海"));
+        list.add(new CityEntity("广州"));
         return list;
     }
 

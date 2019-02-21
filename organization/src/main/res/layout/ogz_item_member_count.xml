@@ -5,7 +5,7 @@
 	android:background="@color/divide_line">
 	
 	<TextView
-		android:id="@+id/tv"
+		android:id="@+id/ogz_item_member_count_des"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_centerHorizontal="true"

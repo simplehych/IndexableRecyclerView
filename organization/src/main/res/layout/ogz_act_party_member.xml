@@ -13,10 +13,10 @@
 		android:src="@drawable/ogz_ic_search"
 		android:transitionName="transition_reveal"
 		tools:targetApi="lollipop"
-		android:visibility="gone"/>
+		android:visibility="visible"/>
 	
 	<me.yokeyword.indexablerv.IndexableLayout
-		android:id="@+id/ogz_indexableLayout"
+		android:id="@+id/ogz_act_party_member_indexable_layout"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:layout_below="@+id/ogz_search_icon"

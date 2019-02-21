@@ -5,7 +5,7 @@
 	android:background="@color/divide_line">
 	
 	<TextView
-		android:id="@+id/tv_index"
+		android:id="@+id/ogz_item_index_des"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_centerVertical="true"

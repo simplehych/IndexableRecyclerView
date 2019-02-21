@@ -10,7 +10,6 @@ import com.google.gson.annotations.SerializedName;
  */
 public class OrganizationEntity {
 
-
     /**
      * 组织机构 id
      */

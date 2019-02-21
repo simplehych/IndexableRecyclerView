@@ -24,12 +24,23 @@ public class OgzSearchFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.ogz_fg_search, container, false);
-        mSearchContent = (IndexableLayout) view.findViewById(R.id.ogz_fg_search_content);
-        mSearchBlank = (RelativeLayout) view.findViewById(R.id.ogz_fg_search_blank_layout);
-        return view;
+        View parent = inflater.inflate(R.layout.ogz_fg_search, container, false);
+        findView(parent);
+        initView();
+        return parent;
     }
 
-    public void showData(){
+    private void findView(View parent) {
+        mSearchContent = (IndexableLayout) parent.findViewById(R.id.ogz_fg_search_content);
+
+    }
+
+
+    private void initView() {
+
+    }
+
+    public void showData() {
+
     }
 }

@@ -35,7 +35,7 @@ public class DescriptionAdapter extends IndexableHeaderAdapter<StringEntity> {
 
     @Override
     public RecyclerView.ViewHolder onCreateContentViewHolder(ViewGroup parent) {
-        View view = LayoutInflater.from(mActivity).inflate(R.layout.header_des, parent, false);
+        View view = LayoutInflater.from(mActivity).inflate(R.layout.ogz_item_description, parent, false);
         return new VH(view);
     }
 
@@ -51,8 +51,8 @@ public class DescriptionAdapter extends IndexableHeaderAdapter<StringEntity> {
 
         public VH(View itemView) {
             super(itemView);
-            img = (ImageView) itemView.findViewById(R.id.img);
-            tv = (TextView) itemView.findViewById(R.id.tv_title);
+            img = (ImageView) itemView.findViewById(R.id.ogz_item_description_flag);
+            tv = (TextView) itemView.findViewById(R.id.ogz_item_description_title);
         }
     }
 }

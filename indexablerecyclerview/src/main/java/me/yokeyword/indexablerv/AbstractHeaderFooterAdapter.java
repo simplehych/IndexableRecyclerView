@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import me.yokeyword.indexablerv.database.HeaderFooterDataObservable;
@@ -128,6 +129,7 @@ abstract class AbstractHeaderFooterAdapter<T> {
             addData(datas.get(i));
         }
     }
+
 
     public void addDatas(int position, List<T> datas) {
         int size = mEntityWrapperList.size();

@@ -5,7 +5,7 @@
 	android:orientation="vertical">
 	
 	<View
-		android:id="@+id/spacing"
+		android:id="@+id/ogz_item_menu_top_spacing"
 		android:layout_width="match_parent"
 		android:layout_height="@dimen/spacing"
 		android:background="@color/divide_line" />
@@ -15,21 +15,21 @@
 		android:layout_height="@dimen/height_item">
 		
 		<ImageView
-			android:id="@+id/img"
+			android:id="@+id/ogz_item_menu_icon"
 			android:layout_width="@dimen/icon_w_h"
 			android:layout_height="@dimen/icon_w_h"
 			android:layout_centerVertical="true"
 			android:layout_marginLeft="@dimen/margin_l_r"
-			android:src="@drawable/ogz_ic_member" />
+			android:src="@drawable/ogz_ic_organization" />
 		
 		<TextView
-			android:id="@+id/tv"
+			android:id="@+id/ogz_item_menu_des"
 			style="@style/str"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_centerVertical="true"
 			android:layout_marginLeft="@dimen/spacing"
-			android:layout_toRightOf="@id/img" />
+			android:layout_toRightOf="@id/ogz_item_menu_icon" />
 		
 		<ImageView
 			android:layout_width="@dimen/icon_w_h"
@@ -40,7 +40,7 @@
 			android:src="@drawable/ogz_ic_nav_next" />
 		
 		<View
-			android:id="@+id/divide"
+			android:id="@+id/ogz_item_menu_divide"
 			android:layout_width="match_parent"
 			android:layout_height="@dimen/divide_line"
 			android:layout_alignParentBottom="true"

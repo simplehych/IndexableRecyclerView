@@ -8,9 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.peopletech.organization.entity.MenuEntity;
+import com.peopletech.organization.entity.MemberEntity;
 import com.peopletech.organization.R;
-import com.peopletech.organization.entity.UserEntity;
 
 import java.util.List;
 
@@ -20,12 +19,12 @@ import me.yokeyword.indexablerv.IndexableHeaderAdapter;
  * @author hych
  * @date 2019/2/19 14:37
  */
-public class AttendantMemberAdapter extends IndexableHeaderAdapter<UserEntity> {
+public class AttendantMemberAdapter extends IndexableHeaderAdapter<MemberEntity> {
     private static final int TYPE = 1;
     private Activity mActivity;
 
 
-    public AttendantMemberAdapter(Activity activity, String index, String indexTitle, List<UserEntity> datas) {
+    public AttendantMemberAdapter(Activity activity, String index, String indexTitle, List<MemberEntity> datas) {
         super(index, indexTitle, datas);
         mActivity = activity;
     }
@@ -37,13 +36,13 @@ public class AttendantMemberAdapter extends IndexableHeaderAdapter<UserEntity> {
 
     @Override
     public RecyclerView.ViewHolder onCreateContentViewHolder(ViewGroup parent) {
-        return new VH(LayoutInflater.from(mActivity).inflate(R.layout.item_user, parent, false));
+        return new VH(LayoutInflater.from(mActivity).inflate(R.layout.ogz_item_member, parent, false));
     }
 
     @Override
-    public void onBindContentViewHolder(RecyclerView.ViewHolder holder, UserEntity entity) {
+    public void onBindContentViewHolder(RecyclerView.ViewHolder holder, MemberEntity entity) {
         VH vh = (VH) holder;
-        vh.tv.setText(entity.getNick());
+        vh.tv.setText(entity.getUserName());
     }
 
     private class VH extends RecyclerView.ViewHolder {
@@ -52,8 +51,8 @@ public class AttendantMemberAdapter extends IndexableHeaderAdapter<UserEntity> {
 
         public VH(View itemView) {
             super(itemView);
-            tv = (TextView) itemView.findViewById(R.id.tv_title);
-            img = (ImageView) itemView.findViewById(R.id.img);
+            tv = (TextView) itemView.findViewById(R.id.ogz_item_description_title);
+            img = (ImageView) itemView.findViewById(R.id.ogz_item_description_flag);
         }
     }
 }

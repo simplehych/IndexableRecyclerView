@@ -34,7 +34,7 @@ public class FootAdapter extends IndexableFooterAdapter<StringEntity> {
 
     @Override
     public RecyclerView.ViewHolder onCreateContentViewHolder(ViewGroup parent) {
-        View view = LayoutInflater.from(mActivity).inflate(R.layout.item_foot, parent, false);
+        View view = LayoutInflater.from(mActivity).inflate(R.layout.ogz_item_member_count, parent, false);
         return new VH(view);
     }
 
@@ -50,7 +50,7 @@ public class FootAdapter extends IndexableFooterAdapter<StringEntity> {
 
         public VH(View itemView) {
             super(itemView);
-            tv = (TextView) itemView.findViewById(R.id.tv);
+            tv = (TextView) itemView.findViewById(R.id.ogz_item_member_count_des);
         }
     }
 }

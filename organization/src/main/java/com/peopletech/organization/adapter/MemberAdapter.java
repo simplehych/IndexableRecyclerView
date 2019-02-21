@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.peopletech.organization.R;
-import com.peopletech.organization.entity.UserEntity;
+import com.peopletech.organization.entity.MemberEntity;
 
 import me.yokeyword.indexablerv.IndexableAdapter;
 
@@ -17,35 +17,49 @@ import me.yokeyword.indexablerv.IndexableAdapter;
  * @author hych
  * @date 2019/2/19 14:33
  */
-public class MemberAdapter extends IndexableAdapter<UserEntity> {
+public class MemberAdapter extends IndexableAdapter<MemberEntity> {
     private LayoutInflater mInflater;
+    private Context mContext;
+    private boolean hideIndex = false;
 
     public MemberAdapter(Context context) {
+        mContext = context;
         mInflater = LayoutInflater.from(context);
+    }
+
+    public void hideIndexItem() {
+        hideIndex = true;
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateTitleViewHolder(ViewGroup parent) {
-        View view = mInflater.inflate(R.layout.item_index_contact, parent, false);
+        View view;
+        if (hideIndex) {
+            view = mInflater.inflate(R.layout.ogz_item_index_no, parent, false);
+        } else {
+            view = mInflater.inflate(R.layout.ogz_item_index, parent, false);
+        }
         return new IndexVH(view);
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateContentViewHolder(ViewGroup parent) {
-        View view = mInflater.inflate(R.layout.item_user, parent, false);
+        View view = mInflater.inflate(R.layout.ogz_item_member, parent, false);
         return new ContentVH(view);
     }
 
     @Override
     public void onBindTitleViewHolder(RecyclerView.ViewHolder holder, String indexTitle) {
-        IndexVH vh = (IndexVH) holder;
-        vh.tv.setText(indexTitle);
+        if (!hideIndex) {
+            IndexVH vh = (IndexVH) holder;
+            vh.tv.setText(indexTitle);
+        }
     }
 
     @Override
-    public void onBindContentViewHolder(RecyclerView.ViewHolder holder, UserEntity entity) {
+    public void onBindContentViewHolder(RecyclerView.ViewHolder holder, MemberEntity entity) {
         ContentVH vh = (ContentVH) holder;
-        vh.tvName.setText(entity.getNick());
+        vh.tvName.setText(entity.getUserName());
     }
 
     private class IndexVH extends RecyclerView.ViewHolder {
@@ -53,7 +67,7 @@ public class MemberAdapter extends IndexableAdapter<UserEntity> {
 
         public IndexVH(View itemView) {
             super(itemView);
-            tv = (TextView) itemView.findViewById(R.id.tv_index);
+            tv = (TextView) itemView.findViewById(R.id.ogz_item_index_des);
         }
     }
 
@@ -63,8 +77,8 @@ public class MemberAdapter extends IndexableAdapter<UserEntity> {
 
         public ContentVH(View itemView) {
             super(itemView);
-            img = (ImageView) itemView.findViewById(R.id.img);
-            tvName = (TextView) itemView.findViewById(R.id.tv_title);
+            img = (ImageView) itemView.findViewById(R.id.ogz_item_description_flag);
+            tvName = (TextView) itemView.findViewById(R.id.ogz_item_description_title);
         }
     }
 }

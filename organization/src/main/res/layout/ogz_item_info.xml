@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:background="?attr/selectableItemBackground">
+	
+	<TextView
+		android:id="@+id/ogz_item_info_des"
+		style="@style/title"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toRightOf="@id/ogz_item_description_flag"
+		android:paddingLeft="30dp"
+		android:paddingTop="15dp"
+		android:paddingRight="15dp"
+		android:paddingBottom="15dp"
+		android:textSize="15sp" />
+	
+	<TextView
+		android:id="@+id/ogz_item_info_content"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:layout_centerVertical="true"
+		android:layout_toRightOf="@+id/ogz_item_info_des"
+		android:gravity="right"
+		android:lineSpacingExtra="5dp"
+		android:paddingLeft="15dp"
+		android:paddingTop="15dp"
+		android:paddingRight="30dp"
+		android:paddingBottom="15dp" />
+	
+	<View
+		android:id="@+id/ogz_item_info_divide"
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/divide_line"
+		android:layout_alignParentBottom="true"
+		android:layout_marginLeft="30dp"
+		android:layout_marginRight="30dp"
+		android:background="@color/divide_line" />
+
+</RelativeLayout>

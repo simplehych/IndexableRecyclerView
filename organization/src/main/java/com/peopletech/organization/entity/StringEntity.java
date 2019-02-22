@@ -1,6 +1,7 @@
 package com.peopletech.organization.entity;
 
 /**
+ * 更新展示描述信息
  *
  * @author hych
  * @date 2019/2/19 16:12

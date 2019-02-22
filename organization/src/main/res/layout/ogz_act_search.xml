@@ -35,10 +35,13 @@
 				android:layout_toLeftOf="@+id/ogz_search_frame_del"
 				android:layout_toRightOf="@+id/ogz_search_frame_iv"
 				android:background="@null"
-				android:focusable="false"
-				android:focusableInTouchMode="false"
+				android:focusable="true"
+				android:focusableInTouchMode="true"
 				android:hint="搜索党员、组织"
-				android:textColor="#BBBBBB"
+				android:imeOptions="actionSearch"
+				android:singleLine="true"
+				android:textColor="#222222"
+				android:textColorHint="#BBBBBB"
 				android:textSize="14sp" />
 			
 			<ImageView
@@ -46,7 +49,8 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_alignParentRight="true"
-				android:src="@drawable/ogz_ic_search_del" />
+				android:src="@drawable/ogz_ic_search_del"
+				android:visibility="gone" />
 		
 		</RelativeLayout>
 		
@@ -66,9 +70,8 @@
 		android:layout_height="match_parent"
 		android:layout_below="@+id/ogz_search_top">
 		
-		<fragment
+		<FrameLayout
 			android:id="@+id/ogz_search_content"
-			class="com.peopletech.organization.OgzSearchFragment"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent" />
 		

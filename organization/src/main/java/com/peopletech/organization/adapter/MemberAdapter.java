@@ -77,8 +77,8 @@ public class MemberAdapter extends IndexableAdapter<MemberEntity> {
 
         public ContentVH(View itemView) {
             super(itemView);
-            img = (ImageView) itemView.findViewById(R.id.ogz_item_description_flag);
-            tvName = (TextView) itemView.findViewById(R.id.ogz_item_description_title);
+            img = (ImageView) itemView.findViewById(R.id.ogz_item_member_avatar);
+            tvName = (TextView) itemView.findViewById(R.id.ogz_item_member_title);
         }
     }
 }

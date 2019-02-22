@@ -24,6 +24,10 @@ public class MemberEntity implements IndexableEntity {
     @SerializedName("user_name")
     private String userName;
 
+
+    public MemberEntity() {
+    }
+
     public MemberEntity(int id, String userName) {
         this.id = id;
         this.userName = userName;

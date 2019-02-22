@@ -93,6 +93,47 @@ public class MemberInfoEntity {
     @SerializedName("partyday")
     private String partyday;
 
+    /**
+     * 身份证
+     */
+    @SerializedName("idcard")
+    private String idCard;
+
+    /**
+     * 家庭地址
+     */
+    @SerializedName("address")
+    private String address;
+
+    /**
+     * 工作岗位
+     */
+    @SerializedName("post_name")
+    private String postName;
+
+    public MemberInfoEntity() {
+    }
+
+    public MemberInfoEntity(int id, String userName, String avatar, String sex, String ethnicityName, String birthday, String educationName, int phone, int orgId, String orgName, String partyStatus, String partyType, String toNormalDate, String partyday, String idCard, String address, String postName) {
+        this.id = id;
+        this.userName = userName;
+        this.avatar = avatar;
+        this.sex = sex;
+        this.ethnicityName = ethnicityName;
+        this.birthday = birthday;
+        this.educationName = educationName;
+        this.phone = phone;
+        this.orgId = orgId;
+        this.orgName = orgName;
+        this.partyStatus = partyStatus;
+        this.partyType = partyType;
+        this.toNormalDate = toNormalDate;
+        this.partyday = partyday;
+        this.idCard = idCard;
+        this.address = address;
+        this.postName = postName;
+    }
+
     public String getEthnicityName() {
         return ethnicityName;
     }
@@ -203,5 +244,29 @@ public class MemberInfoEntity {
 
     public void setPartyday(String partyday) {
         this.partyday = partyday;
+    }
+
+    public String getIdCard() {
+        return idCard;
+    }
+
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPostName() {
+        return postName;
+    }
+
+    public void setPostName(String postName) {
+        this.postName = postName;
     }
 }

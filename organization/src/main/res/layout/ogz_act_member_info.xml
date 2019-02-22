@@ -4,9 +4,15 @@
 	android:layout_height="match_parent"
 	android:background="@color/bg_page">
 	
+	<Button
+		android:id="@+id/test"
+		android:layout_width="50dp"
+		android:layout_height="50dp" />
+	
 	<me.yokeyword.indexablerv.IndexableLayout
-		android:id="@+id/ogz_fg_search_content"
+		android:id="@+id/ogz_act_member_info_indexable_layout"
 		android:layout_width="match_parent"
-		android:layout_height="match_parent" />
+		android:layout_height="match_parent"
+		android:layout_below="@+id/test" />
 
 </RelativeLayout>

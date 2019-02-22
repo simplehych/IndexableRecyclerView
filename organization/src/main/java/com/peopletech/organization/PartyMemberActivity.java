@@ -11,10 +11,10 @@ import android.view.View;
 
 import com.github.promeg.pinyinhelper.Pinyin;
 import com.github.promeg.pinyinhelper.PinyinMapDict;
-import com.peopletech.organization.adapter.AttendantMemberAdapter;
+import com.peopletech.organization.adapter.HeaderAttendantMemberAdapter;
 import com.peopletech.organization.adapter.HeaderMenuAdapter;
-import com.peopletech.organization.adapter.DescriptionAdapter;
-import com.peopletech.organization.adapter.FootAdapter;
+import com.peopletech.organization.adapter.HeaderDesAdapter;
+import com.peopletech.organization.adapter.FooterCountAdapter;
 import com.peopletech.organization.adapter.MemberAdapter;
 import com.peopletech.organization.entity.MemberEntity;
 import com.peopletech.organization.entity.StringEntity;
@@ -28,10 +28,13 @@ import java.util.List;
 import java.util.Map;
 
 import me.yokeyword.indexablerv.IndexableAdapter;
+import me.yokeyword.indexablerv.IndexableFooterAdapter;
 import me.yokeyword.indexablerv.IndexableHeaderAdapter;
 import me.yokeyword.indexablerv.IndexableLayout;
 
 /**
+ * 组织党员页面
+ *
  * @author hych
  * @date 2019/2/19 14:17
  */
@@ -39,16 +42,17 @@ public class PartyMemberActivity extends AppCompatActivity {
 
     private static String TAG = "PartyMemberActivity";
 
-    private MemberAdapter mMemberAdapter;
-    private HeaderMenuAdapter mHeaderMenuAdapter;
-    private DescriptionAdapter mAttendantDesAdapter;
-    private FootAdapter mFooterDesAdapter;
-    private List<StringEntity> mFooterCount;
-    private AttendantMemberAdapter mAttendantMemberAdapter;
-    private List<MemberEntity> mAttendantMemberList;
-    private ArrayList<StringEntity> mAttendantMemberDes;
     private IndexableLayout mIndexableLayout;
 
+    private MemberAdapter mMemberAdapter;
+    private HeaderMenuAdapter mHeaderMenuAdapter;
+    private HeaderDesAdapter mAttendantDesAdapter;
+    private HeaderAttendantMemberAdapter mAttendantMemberAdapter;
+    private FooterCountAdapter mFooterDesAdapter;
+
+    private List<StringEntity> mFooterCount;
+    private List<MemberEntity> mAttendantMemberList;
+    private ArrayList<StringEntity> mAttendantMemberDes;
 
     /**
      * 初始化拼音
@@ -85,7 +89,6 @@ public class PartyMemberActivity extends AppCompatActivity {
         mIndexableLayout.setAdapter(mMemberAdapter);
         mIndexableLayout.setIndexBarVisibility(false);
         mIndexableLayout.setStickyEnable(true);
-        mIndexableLayout.showAllLetter(false);
         mIndexableLayout.setCompareMode(IndexableLayout.MODE_FAST);
 
         addHeaderView(true, true);
@@ -95,12 +98,14 @@ public class PartyMemberActivity extends AppCompatActivity {
         searchIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(PartyMemberActivity.this, searchIcon, searchIcon.getTransitionName());
-                    startActivity(new Intent(PartyMemberActivity.this, OgzSearchActivity.class), optionsCompat.toBundle());
-                } else {
-                    startActivity(new Intent(PartyMemberActivity.this, OgzSearchActivity.class));
-                }
+                startActivity(new Intent(PartyMemberActivity.this, MemberInfoActivity.class));
+
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                    ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(PartyMemberActivity.this, searchIcon, searchIcon.getTransitionName());
+//                    startActivity(new Intent(PartyMemberActivity.this, OgzSearchActivity.class), optionsCompat.toBundle());
+//                } else {
+//                    startActivity(new Intent(PartyMemberActivity.this, OgzSearchActivity.class));
+//                }
             }
         });
 
@@ -141,7 +146,6 @@ public class PartyMemberActivity extends AppCompatActivity {
      */
     private void initMemberAdapter() {
         mMemberAdapter = new MemberAdapter(this);
-        mMemberAdapter.hideIndexItem();
         mMemberAdapter.setOnItemContentClickListener(new IndexableAdapter.OnItemContentClickListener<MemberEntity>() {
             @Override
             public void onItemClick(View v, int originalPosition, int currentPosition, MemberEntity entity) {
@@ -207,7 +211,7 @@ public class PartyMemberActivity extends AppCompatActivity {
         mAttendantMemberDes = new ArrayList<>();
         StringEntity ogz = new StringEntity("组织管理");
         mAttendantMemberDes.add(ogz);
-        mAttendantDesAdapter = new DescriptionAdapter(this, null, null, mAttendantMemberDes);
+        mAttendantDesAdapter = new HeaderDesAdapter(this, null, null, mAttendantMemberDes);
     }
 
     /**
@@ -216,7 +220,7 @@ public class PartyMemberActivity extends AppCompatActivity {
     private void initAttendantMemberAdapter() {
         mAttendantMemberList = new ArrayList<>();
         mAttendantMemberList.add(new MemberEntity(0, "管理员"));
-        mAttendantMemberAdapter = new AttendantMemberAdapter(this, null, null, mAttendantMemberList);
+        mAttendantMemberAdapter = new HeaderAttendantMemberAdapter(this, null, null, mAttendantMemberList);
         mAttendantMemberAdapter.setOnItemHeaderClickListener(new IndexableHeaderAdapter.OnItemHeaderClickListener<MemberEntity>() {
             @Override
             public void onItemClick(View view, int i, MemberEntity memberEntity) {
@@ -231,7 +235,13 @@ public class PartyMemberActivity extends AppCompatActivity {
     private void initFooterDesAdapter() {
         mFooterCount = new ArrayList<>();
         mFooterCount.add(new StringEntity("0"));
-        mFooterDesAdapter = new FootAdapter(PartyMemberActivity.this, null, null, mFooterCount);
+        mFooterDesAdapter = new FooterCountAdapter(PartyMemberActivity.this, null, null, mFooterCount);
+        mFooterDesAdapter.setOnItemFooterClickListener(new IndexableFooterAdapter.OnItemFooterClickListener<StringEntity>() {
+            @Override
+            public void onItemClick(View view, int i, StringEntity stringEntity) {
+                updateFooterCount("1");
+            }
+        });
     }
 
     /**

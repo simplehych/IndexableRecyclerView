@@ -13,24 +13,23 @@ import com.peopletech.organization.entity.StringEntity;
 
 import java.util.List;
 
-import me.yokeyword.indexablerv.IndexableHeaderAdapter;
+import me.yokeyword.indexablerv.IndexableFooterAdapter;
 
 /**
  * @author hych
  * @date 2019/2/19 14:38
  */
-public class DescriptionAdapter extends IndexableHeaderAdapter<StringEntity> {
-    private static final int TYPE = 3;
+public class FooterDesAdapter extends IndexableFooterAdapter<StringEntity> {
     private Activity mActivity;
 
-    public DescriptionAdapter(Activity activity, String index, String indexTitle, List<StringEntity> datas) {
+    public FooterDesAdapter(Activity activity, String index, String indexTitle, List<StringEntity> datas) {
         super(index, indexTitle, datas);
         mActivity = activity;
     }
 
     @Override
     public int getItemViewType() {
-        return TYPE;
+        return IndexType.TYPE_FOOTER_DES;
     }
 
     @Override

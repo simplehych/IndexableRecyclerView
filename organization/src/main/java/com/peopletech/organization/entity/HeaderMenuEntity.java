@@ -1,6 +1,8 @@
 package com.peopletech.organization.entity;
 
 /**
+ * 顶部菜单数据对象
+ *
  * @author hych
  * @date 2019/2/20 14:45
  */

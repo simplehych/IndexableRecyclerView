@@ -19,19 +19,17 @@ import me.yokeyword.indexablerv.IndexableHeaderAdapter;
  * @author hych
  * @date 2019/2/19 14:37
  */
-public class AttendantMemberAdapter extends IndexableHeaderAdapter<MemberEntity> {
-    private static final int TYPE = 1;
+public class HeaderAttendantMemberAdapter extends IndexableHeaderAdapter<MemberEntity> {
     private Activity mActivity;
 
-
-    public AttendantMemberAdapter(Activity activity, String index, String indexTitle, List<MemberEntity> datas) {
+    public HeaderAttendantMemberAdapter(Activity activity, String index, String indexTitle, List<MemberEntity> datas) {
         super(index, indexTitle, datas);
         mActivity = activity;
     }
 
     @Override
     public int getItemViewType() {
-        return TYPE;
+        return IndexType.TYPE_HEADER_ATTENDANT_MEMBER;
     }
 
     @Override
@@ -51,8 +49,8 @@ public class AttendantMemberAdapter extends IndexableHeaderAdapter<MemberEntity>
 
         public VH(View itemView) {
             super(itemView);
-            tv = (TextView) itemView.findViewById(R.id.ogz_item_description_title);
-            img = (ImageView) itemView.findViewById(R.id.ogz_item_description_flag);
+            tv = (TextView) itemView.findViewById(R.id.ogz_item_member_title);
+            img = (ImageView) itemView.findViewById(R.id.ogz_item_member_avatar);
         }
     }
 }

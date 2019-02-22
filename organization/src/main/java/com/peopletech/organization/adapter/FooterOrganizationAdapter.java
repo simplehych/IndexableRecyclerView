@@ -9,27 +9,27 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.peopletech.organization.R;
-import com.peopletech.organization.entity.HeaderMenuEntity;
+import com.peopletech.organization.entity.OrganizationEntity;
 
 import java.util.List;
 
-import me.yokeyword.indexablerv.IndexableHeaderAdapter;
+import me.yokeyword.indexablerv.IndexableFooterAdapter;
 
 /**
  * @author hych
  * @date 2019/2/19 14:38
  */
-public class HeaderMenuAdapter extends IndexableHeaderAdapter<HeaderMenuEntity> {
+public class FooterOrganizationAdapter extends IndexableFooterAdapter<OrganizationEntity> {
     private Activity mActivity;
 
-    public HeaderMenuAdapter(Activity activity, String index, String indexTitle, List<HeaderMenuEntity> datas) {
+    public FooterOrganizationAdapter(Activity activity, String index, String indexTitle, List<OrganizationEntity> datas) {
         super(index, indexTitle, datas);
         mActivity = activity;
     }
 
     @Override
     public int getItemViewType() {
-        return IndexType.TYPE_HEADER_MENU;
+        return IndexType.TYPE_FOOTER_OGZ;
     }
 
     @Override
@@ -39,25 +39,11 @@ public class HeaderMenuAdapter extends IndexableHeaderAdapter<HeaderMenuEntity> 
     }
 
     @Override
-    public void onBindContentViewHolder(RecyclerView.ViewHolder holder, HeaderMenuEntity entity) {
-        VH vh = (VH) holder;
-        vh.img.setImageResource(entity.getIconRes());
-        vh.tv.setText(entity.getTitle());
-
-        if (entity.isFirst()) {
-            vh.topSpacing.setVisibility(View.VISIBLE);
-        } else {
-            vh.topSpacing.setVisibility(View.GONE);
-        }
-
-        if (entity.isLast()) {
-            vh.bottomDivide.setVisibility(View.GONE);
-        } else {
-            vh.bottomDivide.setVisibility(View.VISIBLE);
-        }
+    public void onBindContentViewHolder(RecyclerView.ViewHolder viewHolder, OrganizationEntity entity) {
+        VH vh = (VH) viewHolder;
+        vh.tv.setText(entity.getName());
+        vh.topSpacing.setVisibility(View.GONE);
     }
-
-
 
     private class VH extends RecyclerView.ViewHolder {
         ImageView img;

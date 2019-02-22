@@ -6,4 +6,25 @@
 		<item>组织机构</item>
 		<item>微信邀请党员加入</item>
 	</string-array>
+	
+	<string-array name="member_info_des_base">
+		<item>手机号</item>
+		<item>所属组织</item>
+	</string-array>
+	
+	<string-array name="member_info_des_party">
+		<item>党员类型</item>
+		<item>加入组织日期</item>
+		<item>转正日期</item>
+		<item>党籍状态</item>
+	</string-array>
+	
+	<string-array name="member_info_des_pri">
+		<item>民族</item>
+		<item>学历</item>
+		<item>出生日期</item>
+		<item>身份证号</item>
+		<item>工作岗位</item>
+		<item>家庭住址</item>
+	</string-array>
 </resources>

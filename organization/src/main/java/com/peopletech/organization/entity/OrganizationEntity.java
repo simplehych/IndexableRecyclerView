@@ -48,6 +48,16 @@ public class OrganizationEntity {
     @SerializedName("has_child")
     private int hasChild;
 
+    /**
+     * 是否该组第一个
+     */
+    private boolean isFirst = false;
+
+    /**
+     * 是否该组最后一个
+     */
+    private boolean isLast = false;
+
     public int getId() {
         return id;
     }
@@ -94,5 +104,21 @@ public class OrganizationEntity {
 
     public void setHasChild(int hasChild) {
         this.hasChild = hasChild;
+    }
+
+    public boolean isFirst() {
+        return isFirst;
+    }
+
+    public void setFirst(boolean first) {
+        isFirst = first;
+    }
+
+    public boolean isLast() {
+        return isLast;
+    }
+
+    public void setLast(boolean last) {
+        isLast = last;
     }
 }
